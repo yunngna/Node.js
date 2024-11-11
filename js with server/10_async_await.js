@@ -1,4 +1,4 @@
-//10_async_await.js
+//10_async_await.js  좀 보기 좋게 보여주는 것 (비동기작업)
 //await : 작업이 끝날 때 가지 대기 하라는 의미 
 
 async function getPostInfo(){
@@ -16,4 +16,5 @@ async function getPostInfo(){
     console.log(post);
 }
 
-getPostInfo();
+getPostInfo(); // 비동기작업 
+console.log('코드종료'); // 코드종료가 getPostInfo보다 먼저 실행된다.
