@@ -15,3 +15,5 @@ async function getPostInfo(){
     post.comments = commentList; // 게시글과 comments 합산 하기 
     console.log(post);
 }
+
+getPostInfo();
