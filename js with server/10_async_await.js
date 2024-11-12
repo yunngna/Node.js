@@ -1,5 +1,5 @@
 //10_async_await.js  좀 보기 좋게 보여주는 것 (비동기작업)
-//await : 작업이 끝날 때 가지 대기 하라는 의미 
+//await : 작업이 끝날 때 가지 대기 하라는 의미 (fetch 가 지정한 서버와 통신한 결과를 기다림) == call Stack와 비슷 (선입후출)
 
 async function getPostInfo(){
     let postList = await fetch('https://jsonplaceholder.typicode.com/posts')
