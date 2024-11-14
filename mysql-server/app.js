@@ -15,6 +15,7 @@ app.listen(3000,()=>{
     console.log('http://localhost:3000');
 });
 // REST 방식 
+//customers 
 //전체조회
 app.get('/customers',async(req,res)=>{
     let list = await mysql.query('customerList'); // 퀴리문 가져오기(db정보 가져오기)
@@ -49,6 +50,37 @@ app.put('/customers/:id',(req,res)=>{
 app.delete('/customers/:id',async(req,res)=>{
     let selected = req.params.id; // 경로의 /:id 값 가져오기
     let info = await mysql.query('customerDelete',selected); // mapper.js 으로 이동 해서 실행 
+    res.send(info);
+    
+});
+
+//users 
+//전체조회
+app.get('/users',async(req,res)=>{
+    let list = await mysql.query('userList'); 
+    res.send(list);
+});
+//단건조회
+app.get('/users/:no',async(req,res)=>{
+    let selected = req.params.no; 
+    let info = (await mysql.query('userInfo',selected))[0]; 
+    res.send(info);
+});
+//등록
+app.post('/users',async(req,res)=>{
+    let newObj = req.body; 
+    console.log(newObj);
+    let info = await mysql.query('userInsert',newObj);
+    res.send(info);
+});
+//수정
+app.put('/users/:no',(req,res)=>{
+
+});
+//삭제 
+app.delete('/users/:no',async(req,res)=>{
+    let selected = req.params.no; 
+    let info = await mysql.query('userDelete',selected); 
     res.send(info);
     
 });
