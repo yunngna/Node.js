@@ -43,7 +43,6 @@ app.post('/customers',async(req,res)=>{
 
 //수정 (배열로 데이터 넘겨줘야 한다.)
 app.put('/customers/:id',(req,res)=>{
-    
 });
 
 //삭제
