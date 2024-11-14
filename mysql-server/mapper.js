@@ -22,6 +22,7 @@ const pool = mysql.createPool({
     connectionLimit : 10 // 선점하고자 하는 최대 데이터의 갯수 (최대란 무조건 최대 갯수가 아니라 mysql 가 바빠서 5개 정도 밖에 안되면 5개 선점 가능)
 }); 
 
+
 // 쿼리문을 실행 할 객체(함수) 형성
             // alias = customerList (sql.js파일에 export로 넘겨 받은 것)
 const query = (alias,values)=>{ //쿼리 선택 시, 메소드이름(e.g 전체조회) 와 매개변수(조건의 값 e.g 단건조회의 id)
