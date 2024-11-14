@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch('http://localhost:3000/info',{
+            method : 'post',
+            // application/x-www-form-urlencoded 데이터 타입에 맞게 변경 하려면 new URLSearchParams () 으로 보내줘야 한다. 
+            body : new URLSearchParams({search:'yedam'})
+        })
+        .then(res => res.text()) // 서버가 보내준 데이터가 문자열인 경우 text() 로 받는다
+        .then(result =>console.log(result))
+        .catch(err => console.log(err));
+    </script>
+</body>
+</html>
