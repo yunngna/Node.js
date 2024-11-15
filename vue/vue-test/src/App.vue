@@ -1,15 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <vueComponent/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import vueComponent from './components/vueComponent.vue'   // 모듈 불러오기 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //HelloWorld,
+    vueComponent
   }
 }
 </script>
