@@ -1,10 +1,13 @@
 //app.js => express 서버에서 호출 하는 부분 
 // service 를 통해서 mapper 을 호출 해야 한다(원래)
 //실행 순서 (1)
+//환경 변수는  process 처음 부분에 적는다.
+require('dotenv').config({path:'./database/mysql.env'});
+console.log(process.env);
 
 const express = require('express');
 const app = express(); // 인스턴스 생성 
-const mysql = require('./mapper.js');
+const mysql = require('./database/mapper.js');
 
 //content-type : application/json | rest 기반 서버라서 json 형식의 데이터 주고 받음 
 app.use(express.json());
@@ -42,7 +45,11 @@ app.post('/customers',async(req,res)=>{
 });
 
 //수정 (배열로 데이터 넘겨줘야 한다.)
-app.put('/customers/:id',(req,res)=>{
+app.put('/customers/:id',async(req,res)=>{
+    let selected = req.params.id;
+    let data= req.body;
+    let info = await mysql.query('customerUpdate',[data,selected]);
+    res.send(info);
 });
 
 //삭제
@@ -53,33 +60,3 @@ app.delete('/customers/:id',async(req,res)=>{
     
 });
 
-//users 
-//전체조회
-app.get('/users',async(req,res)=>{
-    let list = await mysql.query('userList'); 
-    res.send(list);
-});
-//단건조회
-app.get('/users/:no',async(req,res)=>{
-    let selected = req.params.no; 
-    let info = (await mysql.query('userInfo',selected))[0]; 
-    res.send(info);
-});
-//등록
-app.post('/users',async(req,res)=>{
-    let newObj = req.body; 
-    console.log(newObj);
-    let info = await mysql.query('userInsert',newObj);
-    res.send(info);
-});
-//수정
-app.put('/users/:no',(req,res)=>{
-
-});
-//삭제 
-app.delete('/users/:no',async(req,res)=>{
-    let selected = req.params.no; 
-    let info = await mysql.query('userDelete',selected); 
-    res.send(info);
-    
-});
