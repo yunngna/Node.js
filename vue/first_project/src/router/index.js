@@ -5,6 +5,7 @@ import DataBinding from '@/views/DataBinding.vue' // @ = 절대경로 (src에 �
 import ListBinding from '@/views/ListBinding.vue'
 import IfBinding from '@/views/IfBinding.vue'
 import OnEvent from '@/views/OnEvent.vue'
+import ComputedWatch from '@/views/ComputedWatch.vue'
 
 
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
     path : '/onEvent', //경로로 불러오기
     name : 'onEvent', // 경로가 긴 경우 이름으로 불러오기 
     component : OnEvent
+  },
+  {
+    path : '/comWatch', //경로로 불러오기
+    name : 'comWatch', // 경로가 긴 경우 이름으로 불러오기 
+    component : ComputedWatch
   },
 
   {

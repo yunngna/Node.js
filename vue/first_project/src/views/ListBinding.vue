@@ -18,7 +18,7 @@
             <tbody>
                 <tr v-for= "(prod,idx) in products"
                     v-bind:key="idx"> 
-                    <!--key 사용 이유 ? 변경(수정)유무를 확인 해서 정확하게 tr 값을 수정하기 위해 사용 -->
+                    <!--key 사용 이유 ? 변경(수정)유무를 확인 해서 정확하게 tr 값을 수정하기 위해 사용/수정유무를 체크 위해 사용 -->
                     <!-- 원래는 idx 를 key 값으로 사용하면 안된다. 각 항목을 식별할 수 있는 것을 key 값으로 사용해야 한다.-->
                     <td>{{ prod.product_name}}</td>
                     <td>{{ prod.price}}</td>
