@@ -5,7 +5,7 @@
         <input type ="text" v-model.number="content">
         <p>{{ content }}</p>
         <!-- <button @click="plusCount">더하기</button> -->
-        <button ref="btn" @click="plusCount">더하기</button>
+        <button ref="btn" @click="plusCount">더하기</button><!-- button 에 ref 속성을 걸어준다. -->
     </div>
 </template>
 <script>

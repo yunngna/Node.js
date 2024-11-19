@@ -28,7 +28,7 @@
         만약 v-on:update-info="handler" 적어주지 않으면 그냥 이벤트를 받아 주지 않게된다. (오류가 발생하지는 않는다) -->
 
         <hr>
-        <RefComponent ref="child"/>
+        <RefComponent ref="child"/> <!-- ref 의 id 지정-->
         <hr>
         <label>부모데이터 : <input type ="number" v-model="num"></label>
         <button type="button" @click="childHandler">자식 제어</button>
