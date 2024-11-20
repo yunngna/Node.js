@@ -3,7 +3,7 @@
 //실행 순서 (1)
 //환경 변수는  process 처음 부분에 적는다.
 require('dotenv').config({path:'./database/mysql.env'});
-console.log(process.env);
+//console.log(process.env);
 
 const express = require('express');
 const app = express(); // 인스턴스 생성 
