@@ -2,17 +2,19 @@
 <template>
   <div>
     <!-- # header component-->
-
+    <DefaultHeader/>
     <!--root 에 연결된 기본 라우터를 적어준다.-->
-    <!-- <router-link to="/customerList">전체조회 | </router-link>
-    <router-link to="/customerAdd">등록</router-link> -->
+    <!--
+    <router-link to="/customerList">전체조회 | </router-link>
+    <router-link to="/customerAdd">등록</router-link> 
+    -->
 
     <!-- # content component-->
 
     <!-- 직접 component 연결 (1) -->
     <!-- <CustomerInfo/> -->
     <!-- <CustomerList/> -->
-    <DefaultHeader/>
+  
 
     <!-- router  통해서 component 연결 (2)-->
     <router-view/>
